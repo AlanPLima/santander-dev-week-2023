@@ -1,18 +1,39 @@
-## Getting Started
+#Santader Dev Week 2024
+Java RESTful API para a Santander Dev Week.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Diagrama de Classes
 
-## Folder Structure
+```mermaid
+classDiagram
+    class User {
+        +String name
+    }
+    
+    class Account {
+        +String number
+        +String agency
+        +float balance
+        +float limit
+    }
+    
+    class Feature {
+        +String icon
+        +String description
+    }
 
-The workspace contains two folders by default, where:
+    class Card {
+        +String number
+        +float limit
+    }
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+    class News {
+        +String icon
+        +String description
+    }
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+    User "1" --> "1" Account
+    User "1" --> "1" Card
+    User "1" --> "0..*" Feature
+    User "1" --> "0..*" News
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```
